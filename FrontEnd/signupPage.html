@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Platform</title>
+    <style>
+        /* Your existing CSS styles */
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <form id="signupForm">
+        <h2>Sign Up</h2>
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle login form submission
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Fetch input values
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                // Simulate authentication (replace with actual backend call)
+                if (username === 'user' && password === 'password') {
+                    // Redirect to main dashboard (or display success message)
+                    window.location.href = 'dashboard.html';
+                } else {
+                    // Display error message (replace with actual error handling)
+                    alert('Invalid username or password');
+                }
+            });
+
+            // Function to handle sign up form submission
+            document.getElementById('signupForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Fetch input values
+                var newUsername = document.getElementById('newUsername').value;
+                var newPassword = document.getElementById('newPassword').value;
+
+                localStorage.setItem('newUsername', newUsername);
+
+                // Simulate sign-up process (to be replaced with actual backend call)
+                // As long as sign-up is successful, redirect to verification page
+                window.location.href = 'verification.html';
+            });
+        });
+    </script>
+</body>
+</html>

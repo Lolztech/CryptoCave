@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Dashboard</title>
+    <style>
+        /* Please add the CSS styles here or on a seperate file */
+    </style>
+</head>
+<body>
+    <h2>Hello <span id="username"></span></h2>
+    <button id="tutorialButton">Tutorial</button>
+    <button id="walletsButton">Wallets</button>
+    <button id="marketButton">Market</button>
+    <button id="helpButton">Request Help</button>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve username from localStorage
+            var username = localStorage.getItem('newUsername');
+            if (username) {
+                // Display username
+                document.getElementById('username').textContent = username;
+            }
+        });
+    </script>
+</body>
+</html>
+
