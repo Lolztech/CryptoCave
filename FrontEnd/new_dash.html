@@ -14,16 +14,24 @@
     <button id="walletsButton">Wallets</button>
     <button id="marketButton">Market</button>
     <button id="helpButton">Request Help</button>
+    <button id="signOut">Sign Out</button>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Retrieve username from localStorage
+            // Get username from localStorage
             var username = localStorage.getItem('newUsername');
             if (username) {
                 // Display username
                 document.getElementById('username').textContent = username;
             }
+            // Add event listener to the "Sign Out" button
+            document.getElementById('signOut').addEventListener('click', function() {
+                // Clear the username from localStorage
+                localStorage.removeItem('newUsername');
+                // Redirect to the signup page
+                window.location.href = 'signupPage.html';
+            });
         });
     </script>
 </body>

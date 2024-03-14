@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Platform</title>
     <style>
-        /* Your existing CSS styles */
+        /* Add some CSS styles in please either on a seperate css file or here*/
     </style>
 </head>
 <body>
@@ -41,10 +41,23 @@
                 var username = document.getElementById('username').value;
                 var password = document.getElementById('password').value;
 
-                // Simulate authentication (replace with actual backend call)
-                if (username === 'user' && password === 'password') {
-                    // Redirect to main dashboard (or display success message)
-                    window.location.href = 'dashboard.html';
+                var hcUser = "Roch123"
+                var hcPass = "Pass123"
+                var hcUserType = "new"
+
+                // Simulating some authentication (to be replaced with actual backend call later)
+                if (username === hcUser && password === hcPass) {
+                    var userType = hcUserType; //makes them a new user
+                    localStorage.setItem('newUsername', username);
+
+                    // Redirect to needed dashboard
+                    if (userType === 'new') {
+                        window.location.href = 'new_dash.html';
+                    } else if (userType === 'expert') {
+                        window.location.href = 'expertdashboard.html';
+                    } else {
+                        window.location.href = 'dashboard.html';
+                    }
                 } else {
                     // Display error message (replace with actual error handling)
                     alert('Invalid username or password');
