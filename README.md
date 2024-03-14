@@ -12,6 +12,7 @@ Parts:
 - Bank Details Input: Designing and implementing forms for users to input their bank details securely. 
 - General Market Updates for Unregistered Users: Designing a public-facing page for unregistered users to view general market updates. 
 - Help page: Designing the pages of FAQ and implementing ways for users to ask admins a question and get a response. 
+
 |
 --- Back end:--- 
 Members: Ali Sajwani, Vishesh, Cristian, Mateusz 
