@@ -2,6 +2,7 @@
 
 Front end:  
 Members: Amy, Jamie, Rochelle, Nikita 
+
 Languages: HTML, CSS, JS 
 
 Parts: 
@@ -14,6 +15,7 @@ Parts:
 
 --- Back end:--- 
 Members: Ali Sajwani, Vishesh, Cristian, Mateusz 
+
 Languages: Python, SQL, PHP 
 
 Parts:  
