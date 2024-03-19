@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+    <style>
+        .navbar { /* sets style for the navigation bar */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .navbar a:hover { /*Highlights navbar once hovering */
+            background-color: #555;
+        }
+        #dashboardLink { /*Link covers entire bar */
+            display: block;
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+        }
+        body { /*sets styles for the main body of text*/
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .popup-form { /*Basic css for the form */
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+        .popup-form label { /*Parts will displayed as a block*/
+            display: block;
+            margin-bottom: 10px;
+        }
+        .popup-form input[type="email"],
+        .popup-form textarea { /* Styles for email input and textarea inside the popup form */
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .popup-form button { /* Styles for buttons inside the popup form */
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .popup-form button:hover { /* Hover effect for buttons inside the popup form */
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!--creates link to dashboard as navigation bar-->
+    <a id="dashboardLink" href="#">
+        <div class="navbar">
+            Dashboard
+        </div>
+    </a>
+
+    <!--sets buttons on page-->
+    <h1>Help Page</h1>
+    <button id="adminHelpButton">Request Help from Admin</button>
+    <button onclick="window.location.href = 'faq_page.html';">FAQ</button>
+
+    <!-- Popup form for requesting help from admin -->
+    <div id="popupForm" class="popup-form">
+        <h2>Request Help from Admin</h2>
+        <form id="helpForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="query">Query:</label>
+            <textarea id="query" name="query" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+            <button type="button" id="backButton">Back</button> <!-- Back button added -->
+        </form>
+    </div>
+
+    <script>
+        // Display the popup form when the "Request Help from Admin" button is clicked
+        document.getElementById('adminHelpButton').addEventListener('click', function() {
+            document.getElementById('popupForm').style.display = 'block';
+        });
+
+        // Close the popup form when the user clicks outside of it
+        window.onclick = function(event) {
+            var popupForm = document.getElementById('popupForm');
+            if (event.target == popupForm) {
+                popupForm.style.display = 'none';
+            }
+        };
+
+        // Function to handle form submission
+        document.getElementById('helpForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Fetch input values
+            var email = document.getElementById('email').value;
+            var query = document.getElementById('query').value;
+
+            // Will be using backend call for this
+            // For example, we'll just display an alert
+            alert('Query sent!\nEmail: ' + email + '\nQuery: ' + query);
+
+            // Reset the form and hide the popup
+            document.getElementById('helpForm').reset();
+            document.getElementById('popupForm').style.display = 'none';
+        });
+
+        // Function to handle back button click
+        document.getElementById('backButton').addEventListener('click', function() {
+            document.getElementById('popupForm').style.display = 'none';
+        });
+        // Function to handle dashboard button click
+        document.getElementById('dashboardLink').addEventListener('click', function() {
+            window.history.back(); // Navigate back to the previous page
+        });
+    </script>
+</body>
+</html>

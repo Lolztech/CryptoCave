@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials Page</title>
+    <style>
+        body {  /*sets styles for the main body of text*/
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header { /* Styles for the headers */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav { /* Styles for the navbar */
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tutorials Page</h1>
+    </header>
+    <button id="backButton">Return</button>
+    <nav>
+        <a href="#newUserSection">New User</a>
+        <a href="#expertUserSection">Expert User</a>
+        <a href="#tradingFirmSection">Trading Firm</a>
+    </nav>
+    <section id="newUserSection">
+        <h2>New User Guide</h2> 
+        <p>Welcome to our platform! As a new user, here are some steps to get started:</p>
+        <ol>
+            <li>Create an account</li>
+            <li>Complete your profile</li>
+            <li>Explore available features</li>
+            <li>Join communities</li>
+        </ol>
+    </section>
+    <section id="expertUserSection">
+        <h2>Expert User Guide</h2>
+        <p>If you're an experienced user, here are some advanced features you can explore:</p>
+        <ul>
+            <li>Customize your dashboard</li>
+            <li>Participate in advanced trading</li>
+            <li>Contribute to discussions</li>
+            <li>Access premium tools</li>
+        </ul>
+    </section>
+    <section id="tradingFirmSection">
+        <h2>Trading Firm Guide</h2>
+        <p>For trading firms, our platform offers specialized tools and services:</p>
+        <ul>
+            <li>Manage multiple accounts</li>
+            <li>Access institutional-grade analytics</li>
+            <li>Collaborate with team members</li>
+            <li>Integration with third-party platforms</li>
+        </ul>
+    </section>
+    <script>
+        // Function to handle back button click
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back(); // Navigate back to the previous page
+        });
+    </script>
+</body>
+</html>
