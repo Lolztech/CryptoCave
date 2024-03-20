@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Dashboard</title>
+    <title>Trading Firm Dashboard</title>
     <style>
         body { /*sets styles for the main body of text*/
             font-family: Arial, sans-serif;
@@ -69,6 +69,11 @@
             document.getElementById('helpButton').addEventListener('click', function() {
                 // Redirect to the tutorial page
                 window.location.href = 'help_page.html';
+            });    
+            // Add listener to the "Employees" button
+            document.getElementById('employeesButton').addEventListener('click', function() {
+                // Redirect to the employees page
+                window.location.href = 'employee_page.html';
             });    
         });
         // For once we have a function to retrieve the user ID from client-side storage
