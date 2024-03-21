@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Help</title>
+</head>
+<body>
+  <h1>Looking for help?</h1>
+  <h2>Read our <a>FAQ</a> first...</h2> <!--seperate page for FAQ maybe?-->
+    <article>
+      <h3>Question 1: What is CryptoCave about?</h2>
+      <p>Answer: Our main aim to help people of all expertise levels learn about the cryptocurrency market.</p>
+    </article>
+    <article>
+      <h3>Question 2: How do I sign up?</h2>
+      <p>Answer: You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the instructions provided to create an account.</p>
+    </article>
+    <article>
+      <h3>Question 3: Can I have more than one wallet?</h2>
+      <p>Answer: Yes, we allow the creation and usage of multiple cryptocurrency wallets.</p>
+    </article>
+    <article>
+      <h3>Question 4: How do I view live market analytics?</h2>
+      <p>Answer: First, you have to sign up for an account, then when you view the market there will be a "View Simple/Advanced Analysis" button available.</p>
+    </article>
+  <h2>Still not satisfied? Contact us!</h2>
+  <form id="askhelpform" action="" method="POST"> <!--we put the location of the form handling script here-->
+    <label for="email">Your Email:</label> <br>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="query">Your Question:</label> <br>
+    <textarea id="query" name="query" required></textarea> <br>
+    
+    <button type="submit" onclick="alert('sent!');reset()">Submit Question</button>
+  </form>
+  
+</body>
+</html>
