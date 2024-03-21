@@ -50,10 +50,9 @@
     <button id="helpButton">Request Help</button>
     <button id="signOut">Sign Out</button>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Retrieve username from localStorage
+            // Get username from localStorage
             var username = localStorage.getItem('newUsername');
             if (username) {
                 // Display username
@@ -66,6 +65,7 @@
                 // Redirect to the signup page
                 window.location.href = 'signupPage.html';
             });
+          
            // Add listener to the "Tutorial" button
             document.getElementById('tutorialButton').addEventListener('click', function() {
                 // Redirect to the tutorial page
