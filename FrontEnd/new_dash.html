@@ -48,6 +48,7 @@
     <button id="walletsButton">Wallets</button>
     <button id="marketButton">Market</button>
     <button id="helpButton">Request Help</button>
+    <button id="signOut">Sign Out</button>
 
 
     <script>
@@ -58,8 +59,6 @@
                 // Display username
                 document.getElementById('username').textContent = username;
             }
-<<<<<<< Updated upstream
-=======
             // Add event listener to the "Sign Out" button
             document.getElementById('signOut').addEventListener('click', function() {
                 // Clear the username from localStorage
@@ -77,7 +76,6 @@
                 // Redirect to the tutorial page
                 window.location.href = 'help_page.html';
             });    
->>>>>>> Stashed changes
         });
         // For once we have a function to retrieve the user ID from client-side storage
         // This has the assumption that user ID is stored in localStorage
