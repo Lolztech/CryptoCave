@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials Page</title>
+    <style>
+        body {  /*sets styles for the main body of text*/
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header { /* Styles for the headers */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav { /* Styles for the navbar */
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tutorials Page</h1>
+    </header>
+    <button id="backButton">Return</button>
+    <nav>
+        <a href="#newUserSection">New User</a>
+        <a href="#expertUserSection">Expert User</a>
+        <a href="#tradingFirmSection">Trading Firm</a>
+    </nav>
+    <section id="newUserSection">
+        <h2>New User Guide</h2> 
+        <p>If you select the "New User" option, it implies that you are new to trading or cryptocurrency platforms. Here's what you can expect:</p>
+        <ol>
+            <li><strong>Beginner-Friendly Features:</strong> The platform offers simplified features and interfaces tailored for users with limited experience in trading or investing.</li>
+            <li><strong>Educational Resources:</strong> There are educational resources such as tutorials, guides, and FAQs to help users understand the basics of trading, investment strategies, and how to use the platform effectively.</li>
+            <li><strong>Simple market analysis</strong> As a new user you will have access to straightforward market analysis tools and information. This analysis might include basic charts, price trends, and simple indicators to help users understand market movements.</li> 
+            <li><strong>Support and Assistance:</strong> There's dedicated customer support available to assist new users with any questions or issues you encounter while navigating the platform.</li>
+        </ol>
+        <h3>Traits you may have</h3>
+
+        <li>Limited experience in trading or investing.</li>
+        <li>Seeking educational resources and guidance to understand trading concepts.</li>
+        <li>Prefer straightforward and easy-to-use features.</li>
+        <li>Looking for basic market analysis to make informed decisions.</li>
+
+        <h2>Dashboard Features</h2> 
+        <li>Tutorial</li>
+        <li>Market</li>
+        <li>Wallet</li>
+        <li>Request help</li>
+
+        <h2>Tutorial</h2>
+        <h2>Market</h2>
+        <h2>Wallet</h2>
+        <h2>Request Help</h2>
+        <p>This section has two main parts to it: Request help from Admin and the FAQ.</p>
+
+    </section>
+    <section id="expertUserSection">
+        <h2>Expert User Guide</h2>
+        <p>If you are selecting the "Expert User" option, you are very experienced in trading and require access to advanced market analysis. Here are some advanced features you can explore:</p>
+        <ul>
+            <li><strong>Access premium tools: </strong> The platform offers advanced trading features including advanced charting tools and analysis. </li>
+            <li><strong>Comprehensive expert market analysis</strong> Expert users have access to comprehensive market analysis tools and data. This analysis might include advanced chart patterns, technical indicators, market sentiment analysis, and real-time news updates to make informed trading decisions.</li> 
+            <li><strong>Premium features: </strong> Premium Tools: Users can access premium tools and services tailored for experienced traders, such as advanced trading tools and access to exclusive research reports. </li>
+        </ul>
+
+        <h3>Traits you may have</h3>
+
+        <li>Extensive experience in trading or investing across various markets.</li>
+        <li>Require advanced features and tools to execute complex trading strategies.</li>
+        <li>Analytical mindset and proficiency in interpreting complex market data.</li>
+        <li>Active engagement in trading communities and discussions to stay updated with market trends and strategies.</li>
+
+    </section>
+    <section id="tradingFirmSection">
+        <h2>Trading Firm Guide</h2>
+        <p>If you have been invited here by an employer or colleague and are representing a trading firm, please select the "Trading Firm" option. Our platform offers specialized tools and services tailored to trading firms:</p>
+        <ul>
+            <li>Manage multiple accounts</li>
+            <li>Access institutional-grade analytics</li>
+            <li>Collaborate with team members</li>
+            <li>Integration with third-party platforms</li>
+        </ul>
+    </section>
+    <script>
+        // Function to handle back button click
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back(); // Navigate back to the previous page
+        });
+    </script>
+</body>
+</html>

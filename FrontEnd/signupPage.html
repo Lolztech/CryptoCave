@@ -5,31 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Platform</title>
     <style>
-        /* Add some CSS styles in please either on a seperate css file or here*/
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 10px;
+        }
+
+        #tradingFirmBox {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <form id="loginForm">
-        <h2>Login</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+    <button id="tutorialButton">How to use Crypto Cave</button>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+    <div class="container">
+        <div class="box">
+        <form id="loginForm">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-        <button type="submit">Login</button>
-    </form>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <form id="signupForm">
-        <h2>Sign Up</h2>
-        <label for="newUsername">Username:</label>
-        <input type="text" id="newUsername" name="newUsername" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
-        <label for="newPassword">Password:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
+    <div class="box">
+        <form id="signupForm">
+            <h2>Sign Up</h2>
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
 
-        <button type="submit">Sign Up</button>
-    </form>
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+    <!-- New div for trading firm signup -->
+    <div id="tradingFirmBox" class="box">
+        <h2>Trading Firm Signup</h2>
+        <button id="CreateAccount">Click to set up an account for your trading firm</button>
+        <button id="JoinTF">Click if you've been invited by your employer</button>
+    </div>
+
+
+    <!-- New section for market analysis -->
+    <section id="marketAnalysis">
+        <h2>Market Analysis</h2>
+        <p>This section provides analysis and insights into the cryptocurrency market.</p>
+        <!-- Image of a graph -->
+        <!-- Image -->
+        <img src="Images_FrontEnd/GraphExample.png" alt="Graph Example">
+        <!-- Please add stuff here -->
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -41,29 +93,59 @@
                 var username = document.getElementById('username').value;
                 var password = document.getElementById('password').value;
 
-                var hcUser = "Roch123"
-                var hcPass = "Pass123"
-                var hcUserType = "new"
+                // To test new user dashboard
+                var hcUserN = "Roch123"
+                var hcPassN = "Roch246"
+
+                // To test expert user dashboard
+                var hcUserE = "Eddy123"
+                var hcPassE = "Eddy246"
+
+                // To test trading firm user dashboard
+                var hcUserT = "Tina123"
+                var hcPassT = "Tina246"
 
                 // Simulating some authentication (to be replaced with actual backend call later)
-                if (username === hcUser && password === hcPass) {
-                    var userType = hcUserType; //makes them a new user
+                if (username === hcUserN && password === hcPassN) {
                     localStorage.setItem('newUsername', username);
 
                     // Redirect to needed dashboard
-                    if (userType === 'new') {
-                        window.location.href = 'new_dash.html';
-                    } else if (userType === 'expert') {
-                        window.location.href = 'expertdashboard.html';
-                    } else {
-                        window.location.href = 'dashboard.html';
-                    }
+                    window.location.href = 'new_dash.html';
+
+                } else if (username === hcUserE && password === hcPassE) {
+                    localStorage.setItem('newUsername', username);
+
+                    // Redirect to needed dashboard
+                    window.location.href = 'expert_dash.html';
+
+                } else if (username === hcUserT && password === hcPassT) {
+                    localStorage.setItem('newUsername', username);
+
+                    // Redirect to needed dashboard
+                    window.location.href = 'tradingF_dash.html';
+
                 } else {
                     // Display error message (replace with actual error handling)
                     alert('Invalid username or password');
-                }
+                } 
             });
 
+            // Add listener to the "Tutorial" button
+            document.getElementById('tutorialButton').addEventListener('click', function() {
+                    // Redirect to the tutorial page
+                    window.location.href = 'tutorials_page.html';
+            });   
+        
+            // Add listener to the "Set up account" button
+            document.getElementById('CreateAccount').addEventListener('click', function() {
+                    // Redirect to the tutorial page
+                    window.location.href = 'CreateAccount.html';
+            });   
+            // Add listener to the "Join trading firm" button
+            document.getElementById('JoinTF').addEventListener('click', function() {
+                    // Redirect to the tutorial page
+                    window.location.href = 'JoinTF.html';
+            });   
             // Function to handle sign up form submission
             document.getElementById('signupForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent default form submission
@@ -78,6 +160,10 @@
                 // As long as sign-up is successful, redirect to verification page
                 window.location.href = 'verification.html';
             });
+            // Function to show the trading firm signup section
+            function showTradingFirmSignup() {
+                document.getElementById('tradingFirmSignup').style.display = 'block';
+            }
         });
     </script>
 </body>
