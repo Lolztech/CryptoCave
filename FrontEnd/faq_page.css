@@ -1,0 +1,15 @@
+.contents { /* Styles for the contents container */
+  margin-bottom: 20px;
+}
+.contents a { /* Styles for links inside the contents container */
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #333;
+}
+.contents a:hover {
+  text-decoration: underline;
+}
+h2 { /* Styles for h2 headings */
+  margin-top: 20px;
+}
