@@ -42,7 +42,6 @@
         </div>
     </a>
 
-    
     <!--sets all the buttons-->
     <h2>Hello <span id="username"></span></h2>
     <div id="companyNameContainer"> 
@@ -63,14 +62,6 @@
                 // Display username
                 document.getElementById('username').textContent = username;
             }
-            var companyName = localStorage.getItem('companyName'); // Corrected typo
-            if (companyName !== null) {
-            // Display company name
-            document.getElementById('companyName').textContent = companyName;
-            } else {
-            // If company name is not defined, hide the container
-            document.getElementById('companyNameContainer').style.display = 'none';
-            }
             // Gives "Sign Out" button some function
             document.getElementById('signOut').addEventListener('click', function() {
                 // Clear the username from localStorage
@@ -82,7 +73,12 @@
             document.getElementById('helpButton').addEventListener('click', function() {
                 // Redirect to the tutorial page
                 window.location.href = 'help_page.html';
-            });    
+            });   
+            // Give "Market" button some function
+            document.getElementById('marketButton').addEventListener('click', function() {
+                // Redirect to the market page
+                window.location.href = 'market_page.html';
+            });   
         });
         // For once we have a function to retrieve the user ID from client-side storage
         // This has the assumption that user ID is stored in localStorage
