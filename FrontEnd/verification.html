@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Verification</title>
-    <link rel="stylesheet" href="./allpages.css">
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/verification.css">
 </head>
 <body>
     <h2>Email Verification</h2>
@@ -95,36 +96,14 @@
                 var confirmation = confirm('Click Ok to continue as a ' + userType + ' user');
                 if (confirmation) {
                     if (userType === 'expert') {
-                        // Ask for trading firm confirmation
-                        var isTradingFirm = confirm('Click Ok to register as a trading firm, click cancel to continue as an expert user');
-                        if (isTradingFirm) {
-                            // Show firm name form for trading firm
-                            firmNameFormContainer.style.display = 'block';
-                        } else {
-                            // Redirect to dashboard for expert users not registering as a trading firm
+                            // Redirect to dashboard for expert users
                             redirectToDashboard(userType);
-                        }
                     } else {
                         // Redirect to dashboard for non-expert users
                         redirectToDashboard(userType);
                     }
-                }    
+                }
             });
-
-            // Firm name form submission
-            firmNameForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Fetch entered company name
-                var companyName = document.getElementById('companyName').value;
-
-                // Simulate storing the company name (replace with actual backend call)
-                console.log('Company Name:', companyName);
-
-                // Redirect to dashboard after storing the company name
-                redirectToDashboard(userType);
-            });
-
             // Function to redirect to dashboard (replace with actual redirection logic)
             function redirectToDashboard(userType) {
                 if (userType === 'expert') {

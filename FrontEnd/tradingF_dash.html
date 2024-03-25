@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Dashboard</title>
-    <link rel="stylesheet" href="./allpages.css">
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/tradingF_dash.css">
+    <title>Trading Firm Dashboard</title>
+    
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -42,6 +44,11 @@
             document.getElementById('helpButton').addEventListener('click', function() {
                 // Redirect to the tutorial page
                 window.location.href = 'help_page.html';
+            });    
+            // Add listener to the "Employees" button
+            document.getElementById('employeesButton').addEventListener('click', function() {
+                // Redirect to the employees page
+                window.location.href = 'employee_page.html';
             });    
         });
         // For once we have a function to retrieve the user ID from client-side storage

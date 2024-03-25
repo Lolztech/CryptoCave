@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Dashboard</title>
-    <link rel="stylesheet" href="./allpages.css">
+    <title>Expert Dashboard</title>
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/expert_dash.css">
 </head>
 <body> 
-
     <!--creates link to dashboard as navigation bar-->
     <a id="dashboardLink" href="#">
         <div class="navbar">
             Dashboard
         </div>
     </a>
-
     
     <!--sets all the buttons-->
     <h2>Hello <span id="username"></span></h2>
+    <div id="companyNameContainer"> 
+        <h2><span id="companyName"></span></h2>
+    </div>
     <button id="walletsButton">Wallets</button>
     <button id="marketButton">Market</button>
     <button id="helpButton">Request Help</button>
@@ -25,12 +27,21 @@
 
 
     <script>
+        console.log(companyName);
         document.addEventListener('DOMContentLoaded', function() {
             // Get username from localStorage
             var username = localStorage.getItem('newUsername');
             if (username) {
                 // Display username
                 document.getElementById('username').textContent = username;
+            }
+            var companyName = localStorage.getItem('companyName'); // Corrected typo
+            if (companyName !== null) {
+            // Display company name
+            document.getElementById('companyName').textContent = companyName;
+            } else {
+            // If company name is not defined, hide the container
+            document.getElementById('companyNameContainer').style.display = 'none';
             }
             // Gives "Sign Out" button some function
             document.getElementById('signOut').addEventListener('click', function() {
@@ -55,4 +66,3 @@
     </script>
 </body>
 </html>
-

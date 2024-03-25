@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help Page</title>
-    <link rel="stylesheet" href="./allpages.css">
-    <link rel="stylesheet" href="./help_page.css">
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/help_page.css">
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -58,16 +58,11 @@
             var query = document.getElementById('query').value;
 
             // Will be using backend call for this
-            // For example, we'll just display an alert
+            // just display an alert
             alert('Query sent!\nEmail: ' + email + '\nQuery: ' + query);
 
             // Reset the form and hide the popup
             document.getElementById('helpForm').reset();
-            document.getElementById('popupForm').style.display = 'none';
-        });
-
-        // Function to handle back button click
-        document.getElementById('backButton').addEventListener('click', function() {
             document.getElementById('popupForm').style.display = 'none';
         });
         // Function to handle dashboard button click
