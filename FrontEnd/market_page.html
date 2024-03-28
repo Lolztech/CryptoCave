@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Market</title>
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/current_market.css">
+</head>
+<body>
+    <!--creates link to dashboard as navigation bar-->
+    <a id="dashboardLink" href="#">
+        <div class="navbar">
+            Dashboard
+        </div>
+    </a>
+
+    <!--sets all the buttons-->
+    <nav>
+      <h2>Hello <span id="username"></span></h2>
+      <button id="tutorialButton">Tutorial</button>
+      <button id="walletsButton">Wallets</button>
+      <button id="marketButton">Market</button>
+      <button id="helpButton">Request Help</button>
+      <button id="signOut">Sign Out</button>
+    </nav>
+
+    <figure id="marketGraph" src="/FrontEnd/Images_FrontEnd/GraphExample.png">
+      <figcaption>Market Graph Placeholder</figcaption>
+    </figure>
+      
+    <figure>
+      <figcaption>Top 5 Currencies</figcaption>
+      <ol id="topCurrencies">
+        <li>filler</li>
+      </ol>
+    </figure>
+    
+    <button id="analysisButton">View Analysis</button>
+
+    <script defer src="market_page.js"></script>
+    <script defer src="dashboard.js"></script>
+</body>

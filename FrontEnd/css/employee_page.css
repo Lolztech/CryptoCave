@@ -1,0 +1,21 @@
+form {
+  display: none; /* Hide the form by default */
+  max-width: 300px;
+  margin: 20px auto;
+}
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
