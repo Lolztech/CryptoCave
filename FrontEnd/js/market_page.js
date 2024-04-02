@@ -1,9 +1,20 @@
-// Placeholder for displaying market graph and top currencies
+document.addEventListener('DOMContentLoaded', function() {
   displayMarketGraph();
   displayTopCurrencies();
+  setupAnalysisButton();
+});
 
-  // Setup the analysis button based on the user's experience level
-  var userExperienceLevel = localStorage.getItem('userExperienceLevel');
+function displayMarketGraph() {
+  console.log('Displaying market graph...');
+}
+
+function displayTopCurrencies() {
+  console.log('Displaying top currencies...');
+}
+
+// Setup the analysis button based on the user's experience level
+function setupAnalysisButton() {
+  var userExperienceLevel = localStorage.getItem('userType');
   var analysisButton = document.getElementById('analysisButton');
   if (userExperienceLevel === 'new') {
       analysisButton.textContent = 'View Simple Market Analysis';
@@ -15,16 +26,8 @@
   analysisButton.addEventListener('click', function() {
       displayMarketAnalysis(userExperienceLevel);
   });
-
-
-function displayMarketGraph() {
-  console.log('Displaying market graph...');
-}
-
-function displayTopCurrencies() {
-  console.log('Displaying top currencies...');
-}
-
+};
+  
 function displayMarketAnalysis(experienceLevel) {
   // Remove any existing analysis content
   var existingAnalysis = document.getElementById('marketAnalysis');

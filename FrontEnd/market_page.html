@@ -6,6 +6,8 @@
     <title>Current Market</title>
     <link rel="stylesheet" href="css/allpages.css">
     <link rel="stylesheet" href="css/current_market.css">
+    <script defer src="js/dashboard.js"></script>
+    <script defer src="js/market_page.js"></script>
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -25,7 +27,8 @@
       <button id="signOut">Sign Out</button>
     </nav>
 
-    <figure id="marketGraph" src="/FrontEnd/Images_FrontEnd/GraphExample.png">
+    <figure>
+      <img id="marketGraph" src="Images_FrontEnd/GraphExample.png" alt="market trends" height="200px" width="300px">
       <figcaption>Market Graph Placeholder</figcaption>
     </figure>
       
@@ -37,7 +40,4 @@
     </figure>
     
     <button id="analysisButton">View Analysis</button>
-
-    <script defer src="market_page.js"></script>
-    <script defer src="dashboard.js"></script>
 </body>
