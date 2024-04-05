@@ -65,6 +65,10 @@
             document.getElementById('helpForm').reset();
             document.getElementById('popupForm').style.display = 'none';
         });
+        // Function to handle back button click
+    document.getElementById('backButton').addEventListener('click', function() {
+        document.getElementById('popupForm').style.display = 'none'; // Hide the popup form
+    });
         // Function to handle dashboard button click
         document.getElementById('dashboardLink').addEventListener('click', function() {
             window.history.back(); // Navigate back to the previous page
