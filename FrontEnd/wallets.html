@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Wallets Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+      }
+      .navbar a:hover {
+        background-color: #555;
+      }
+      #dashboardLink {
+        display: block;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+      }
+      #createWalletForm,
+      #existingWallets {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        text-align: left;
+        padding: 0 20px;
+      }
+      #backButton {
+        margin: 20px;
+      }
+      .wallet-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .wallet-card button {
+        padding: 5px 10px;
+        margin-right: 8px;
+      }
+      #walletList {
+        list-style: none;
+        padding: 0;
+        width: 50vw;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      id="dashboardLink"
+      href="#"
+      ><div class="navbar">Dashboard</div></a
+    >
+    <button id="backButton">Return</button>
+    <button id="dashboardButton">Go to Dashboard</button>
+    <h2>Hello <span id="username"></span></h2>
+
+    <div id="createWalletForm">
+      <h2>Create a New Wallet</h2>
+      <form id="walletForm">
+        <label for="walletName">Wallet Name:</label>
+        <input
+          type="text"
+          id="walletName"
+          name="walletName"
+          required
+        /><br /><br />
+        <label for="bankAccount">Choose Bank Account:</label>
+        <select
+          id="bankAccount"
+          name="bankAccount"
+          required
+        >
+          <!-- Add more options as needed --></select
+        ><br /><br />
+        <button type="submit">Create Wallet</button>
+      </form>
+    </div>
+
+    <div id="existingWallets">
+      <h2>Existing Wallets</h2>
+      <ul id="walletList"></ul>
+    </div>
+
+    <script>
+      // TODO: make request from backend for all the user bank accounts
+      const bankAccounts = [
+        { id: 'bankAccount1', name: 'Bank Account 1' },
+        { id: 'bankAccount2', name: 'Bank Account 2' },
+        { id: 'bankAccount3', name: 'Bank Account 3' },
+      ]
+
+      const bankAccountSelect = document.getElementById('bankAccount')
+      bankAccounts.forEach(function (account) {
+        const option = document.createElement('option')
+        option.value = account.id
+        option.textContent = account.name
+        bankAccountSelect.appendChild(option)
+      })
+      document
+        .getElementById('walletForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault()
+
+          const walletName = document.getElementById('walletName').value
+          const bankAccount = document.getElementById('bankAccount').value
+
+          const wallet = {
+            name: walletName,
+            bankAccount: bankAccount,
+            balance: 0,
+          }
+
+          // TODO: load all the wallets from backend using get request
+          const wallets = JSON.parse(localStorage.getItem('wallets')) || []
+
+          wallets.push(wallet)
+
+          localStorage.setItem('wallets', JSON.stringify(wallets))
+
+          displayWallets(wallets)
+
+          document.getElementById('walletName').value = ''
+          document.getElementById('bankAccount').value = ''
+        })
+
+      window.onload = () => {
+        const username = localStorage.getItem('newUsername')
+        if (username) {
+          document.getElementById('username').textContent = username
+          const wallets = JSON.parse(localStorage.getItem('wallets')) || []
+          displayWallets(wallets)
+        }
+      }
+
+      function displayWallets(wallets) {
+        const walletList = document.getElementById('walletList')
+        walletList.innerHTML = ''
+
+        wallets.forEach((wallet) => {
+          const listItem = document.createElement('li')
+          const walletCard = document.createElement('div')
+          walletCard.className = 'wallet-card'
+
+          const walletInfo = document.createElement('div')
+          walletInfo.textContent =
+            wallet.name + ' - ' + findBankAccountName(wallet.bankAccount)
+
+          currentBalance = document.createElement('p')
+          currentBalance.textContent = `Current Balance: ${wallet.balance}`
+          walletCard.appendChild(currentBalance)
+          const buttonsDiv = document.createElement('div')
+          const investButton = document.createElement('button')
+          investButton.textContent = 'Invest'
+          const withdrawButton = document.createElement('button')
+          withdrawButton.textContent = 'Withdraw'
+          const changeButton = document.createElement('button')
+          changeButton.textContent = 'Change'
+
+          investButton.addEventListener('click', () => {
+            invest()
+            console.log('Invest button clicked for wallet: ' + wallet.name)
+          })
+
+          withdrawButton.addEventListener('click', () => {
+            withdraw()
+            console.log('Withdraw button clicked for wallet: ' + wallet.name)
+          })
+
+          changeButton.addEventListener('click', () => {
+            changeCurrency()
+          })
+
+          buttonsDiv.appendChild(investButton)
+          buttonsDiv.appendChild(withdrawButton)
+          buttonsDiv.appendChild(changeButton)
+
+          walletCard.appendChild(walletInfo)
+          walletCard.appendChild(buttonsDiv)
+
+          listItem.appendChild(walletCard)
+          walletList.appendChild(listItem)
+        })
+      }
+
+      function findBankAccountName(id) {
+        const account = bankAccounts.find((account) => {
+          return account.id === id
+        })
+        return account ? account.name : 'Unknown'
+      }
+
+      document.getElementById('backButton').addEventListener('click', () => {
+        window.history.back()
+      })
+
+      document
+        .getElementById('dashboardButton')
+        .addEventListener('click', () => {
+          window.location.href = 'new_dash.html'
+        })
+
+      // TODO: make request to backend for each opeation
+      function invest() {
+        console.log('invest')
+      }
+      function withdraw() {
+        console.log('withdraw')
+      }
+      function changeCurrency() {
+        console.log('change currency')
+      }
+    </script>
+  </body>
+</html>
