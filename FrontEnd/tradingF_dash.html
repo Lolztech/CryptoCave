@@ -3,35 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/tradingF_dash.css">
+    <script defer src="js/dashboard.js"></script>
+    <script defer src="js/dashboardbar.js"></script>
     <title>Trading Firm Dashboard</title>
-    <style>
-        body { /*sets styles for the main body of text*/
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar { /* sets style for the navigation bar */
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-        }
-        .navbar a:hover { /*Highlights navbar when hovering */
-            background-color: #555;
-        }
-        #dashboardLink { /*Link covers entire bar */
-            display: block;
-            text-decoration: none;
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+    scri
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -42,53 +19,15 @@
     </a>
 
     <!--sets all the buttons-->
-    <h2>Hello <span id="username"></span></h2>
-    <button id="employeesButton">Employees</button>
-    <button id="walletsButton">Wallets</button>
-    <button id="marketButton">Market</button>
-    <button id="helpButton">Request Help</button>
-    <button id="signOut">Sign Out</button>
+    <nav>
+        <h2>Hello <span id="username"></span></h2>
+        <button id="employeesButton">Employees</button>
+        <button id="walletsButton">Wallets</button>
+        <button id="marketButton">Market</button>
+        <button id="helpButton">Request Help</button>
+        <button id="signOut">Sign Out</button>
+    </nav>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get username from localStorage
-            var username = localStorage.getItem('newUsername');
-            if (username) {
-                // Display username
-                document.getElementById('username').textContent = username;
-            }
-            // Add event listener to the "Sign Out" button
-            document.getElementById('signOut').addEventListener('click', function() {
-                // Clear the username from localStorage
-                localStorage.removeItem('newUsername');
-                // Redirect to the signup page
-                window.location.href = 'signupPage.html';
-            });
-            // Add listener to the "Tutorial" button
-            document.getElementById('helpButton').addEventListener('click', function() {
-                // Redirect to the tutorial page
-                window.location.href = 'help_page.html';
-            });    
-            // Add listener to the "Employees" button
-            document.getElementById('employeesButton').addEventListener('click', function() {
-                // Redirect to the employees page
-                window.location.href = 'employee_page.html';
-            });    
-            // Give "Market" button some function
-            document.getElementById('marketButton').addEventListener('click', function() {
-                // Redirect to the market page
-                window.location.href = 'market_page.html';
-            });  
-        });
-        // For once we have a function to retrieve the user ID from client-side storage
-        // This has the assumption that user ID is stored in localStorage
-        var userId = localStorage.getItem('userId');
-        if (userId) {
-            var dashboardLink = document.getElementById('dashboardLink');
-            dashboardLink.href = 'dashboard.html?userId=' + userId;
-        }
-    </script>
 </body>
 </html>
 

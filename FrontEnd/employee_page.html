@@ -4,55 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee</title>
-    <style>
-        body { /*sets styles for the main body of text*/
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar { /* sets style for the navigation bar */
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-        }
-        .navbar a:hover { /*Highlights navbar when hovering */
-            background-color: #555;
-        }
-        #dashboardLink { /*Link covers entire bar */
-            display: block;
-            text-decoration: none;
-            height: 100%;
-            width: 100%;
-        }
-        form {
-            display: none; /* Hide the form by default */
-            max-width: 300px;
-            margin: 20px auto;
-        }
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            box-sizing: border-box;
-        }
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/employee_page.css">
+    <script defer src="js/employees.js"></script>
+    <script defer src="js/dashboardbar.js"></script>
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -74,53 +29,6 @@
         <textarea id="message" name="message" placeholder="Message to Employee"></textarea>
         <button type="submit">Send</button>
     </form>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add listener to the "Add employees" button
-            document.getElementById('addEmployeesButton').addEventListener('click', function() {
-                // pop up form to add employee
-                document.getElementById('addEmployeeForm').style.display = 'block';
-            }); 
-            // Add listener to the "Remove employees" button
-            document.getElementById('removeEmployeesButton').addEventListener('click', function() {
-                // pop up form to remove employee (will use backend function)
-            });    
-            // Add listener to the "View employees" button
-            document.getElementById('viewEmployeesButton').addEventListener('click', function() {
-                // table pops up showing all employees (will use backend function)
-            });    
-        });
-        // Add listener to the form submission
-        document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Fetch input values
-            var fullName = document.getElementById('fullName').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-
-            // Replace this with backend logic to send email to employee
-            console.log('Adding employee:', fullName, email, 'with message:', message);
-
-            // Will be using backend call for this
-            // just display an alert
-            alert('Query sent!\nEmail: ' + email + '\nMessage: ' + message);
-
-            // Optional: Clear the form fields after submission
-            document.getElementById('fullName').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-
-            // Hide the form after submission
-            document.getElementById('addEmployeeForm').style.display = 'none';
-        });
-
-        // Function to handle dashboard button click
-        document.getElementById('dashboardLink').addEventListener('click', function() {
-            window.history.back(); // Navigate back to the previous page
-        });
-</script>
 </body>
 </html>
 

@@ -4,32 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorials Page</title>
-    <style>
-        body {  /*sets styles for the main body of text*/
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header { /* Styles for the headers */
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav { /* Styles for the navbar */
-            text-align: center;
-            margin-top: 20px;
-        }
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/allpages.css">
+    <link rel="stylesheet" href="css/tutorials_page.css">
+    <script defer src="js/backButton.js"></script>
+    <script defer src="js/dashboardbar.js"></script>
 </head>
 <body>
     <header>
@@ -121,11 +99,5 @@
             <li>Integration with third-party platforms</li>
         </ul>
     </section>
-    <script>
-        // Function to handle back button click
-        document.getElementById('backButton').addEventListener('click', function() {
-            window.history.back(); // Navigate back to the previous page
-        });
-    </script>
 </body>
 </html>
