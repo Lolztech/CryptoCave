@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Get username from localStorage
+  var username = localStorage.getItem('newUsername');
+  if (username) {
+      // Display username
+      document.getElementById('username').textContent = username;
+  }          
+ // Add listener to the "marketAnalysisButton" button
+  document.getElementById('marketAnalysisButton').addEventListener('click', function() {
+      // Redirect to the market Analysis page
+      window.location.href = 'marketAnalysis_page.html';
+  });    
+  // Add listener to the "news" button
+  document.getElementById('marketNewsButton').addEventListener('click', function() {
+      // Redirect to the market news page
+      window.location.href = 'marketNews_page.html';
+  });    
+});
+
+/*
+document.addEventListener('DOMContentLoaded', function() {
   displayMarketGraph();
   displayTopCurrencies();
   setupAnalysisButton();
@@ -52,6 +72,7 @@ function displayMarketAnalysis(experienceLevel) {
       `;
   }
 
-  // Append the new section to the body or a specific container on your page
+  // Append the new section to the body or a specific container on the page
   document.body.appendChild(analysisContent); // Or another container like document.getElementById('containerId').appendChild(analysisContent);
 }
+*/

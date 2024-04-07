@@ -4,35 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Market</title>
-    <style>
-        
-        body { /*sets styles for the main body of text*/
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar { /* sets style for the navigation bar */
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-        }
-        .navbar a:hover { /*Highlights navbar once hovering */
-            background-color: #555;
-        }
-        #dashboardLink { /*Link covers entire bar */
-            display: block;
-            text-decoration: none;
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/allpages.css">
+    <script src="js/backButton.js"></script>
+    <script defer src="js/dashboardbar.js"></script>
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -41,11 +15,7 @@
             Dashboard
         </div>
     </a>
-    <header><button id="backButton">Return</button></header>
-
-    <script>
-        // Function to handle back button click
-        document.getElementById('backButton').addEventListener('click', function() {
-            window.history.back(); // Navigate back to the previous page
-        });
-    </script>
+    <header>
+        <button id="backButton">Return</button>
+    </header>
+</body>

@@ -1,0 +1,31 @@
+#createWalletForm, #existingWallets {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  text-align: left;
+  padding: 0 20px;
+}
+#backButton {
+  margin: 20px;
+}
+.wallet-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wallet-card button {
+  padding: 5px 10px;
+  margin-right: 8px;
+}
+#walletList {
+  list-style: none;
+  padding: 0;
+  width: 50vw;
+}

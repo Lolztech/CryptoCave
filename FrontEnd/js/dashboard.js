@@ -15,10 +15,12 @@ function displayUsername() {
 }
 
 function setUpButtons() {
-  //employeesButton();
-  tutorialButton();
   helpButton();
+  marketButton();
+  walletsButton();
   signoutButton();
+  tutorialButton();
+  employeesButton();
 }
 
 function updateUserDashboard() {
@@ -30,13 +32,7 @@ function updateUserDashboard() {
     dashboardLink.href = 'dashboard.html?userId=' + userId;
   }
 }
-function tutorialButton() {
-  // Add event listener to the "Sign Out" button
-  document.getElementById('tutorialButton').addEventListener('click', function() {
-    // Redirect to the tutorial page
-    window.location.href = 'tutorials_page.html';
-  });
-}
+
 function signoutButton() {
   // Add event listener to the "Sign Out" button
   document.getElementById('signOut').addEventListener('click', function() {
@@ -55,6 +51,14 @@ function helpButton() {
   });    
 }
 
+function marketButton() {
+  // Add listener to the "Market" button
+  document.getElementById('marketButton').addEventListener('click', function() {
+    // Redirect to the market page
+    window.location.href = 'market_page.html';
+  });    
+}
+
 function walletsButton() {
   // Add listener to the "Help" button
   document.getElementById('walletsButton').addEventListener('click', function() {
@@ -63,8 +67,18 @@ function walletsButton() {
   });    
 }
 
+function tutorialButton() {
+  if (document.getElementById('tutorialButton')) {
+    // Add event listener to the "tutorial" button
+  document.getElementById('tutorialButton').addEventListener('click', function() {
+    // Redirect to the tutorial page
+    window.location.href = 'tutorials_page.html';
+  });
+  }
+}
+
 function employeesButton() {
-  if (employeesButton) {
+  if (document.getElementById('employeesButton')) {
     // Add listener to the "Employees" button
   document.getElementById('employeesButton').addEventListener('click', function() {
     // Redirect to the employees page
