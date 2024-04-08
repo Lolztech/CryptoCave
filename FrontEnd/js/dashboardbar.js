@@ -7,7 +7,7 @@ function gotodashboard() {
     if(localStorage.getItem('companyName')!= null){
       window.location.href = 'tradingF_dash.html';
     }
-    else if (localStorage.getItem('userType')==='expert') {
+    else if (localStorage.getItem('userType')=='expert') {
       window.location.href = 'expert_dash.html';
     }
     else {

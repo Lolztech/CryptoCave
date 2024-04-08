@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/allpages.css">
     <link rel="stylesheet" href="css/help_page.css">
     <script defer src="js/dashboardbar.js"></script>
+    <script defer src="js/backButton.js"></script>
+    <script defer src="js/help_form.js"></script>
 </head>
 <body>
     <!--creates link to dashboard as navigation bar-->
@@ -16,14 +18,53 @@
         </div>
     </a>
 
+    <br>
     <!--sets buttons on page-->
+    <button id="backButton">Return</button>
     <h1>Help Page</h1>
+    
+   <!-- <button onclick="window.location.href = 'faq_page.html';">FAQ</button> -->
+   <h2>Frequently Asked Questions</h1>
+    
+    <!-- Table of Contents -->
+    <div class="contents">
+        <h3>Contents</h3>
+        <a href="#problem1">Problem 1: How to create an account?</a> <br>
+        <a href="#problem2">Problem 2: Forgot password?</a> <br>
+        <a href="#problem3">Problem 3: How to make a deposit?</a> <br>
+        <a href="#problem4">Problem 4: How to withdraw funds?</a> <br>
+        <!-- Need to add more problems -->
+    </div>
+
+    <!-- FAQ Sections -->
+    <section id="problem1">
+        <h3>Problem 1: How to create an account?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vestibulum ac libero sit amet lorem accumsan facilisis. Duis id semper metus.</p>
+    </section>
+
+    <section id="problem2">
+        <h3>Problem 2: Forgot password?</h3>
+        <p>Etiam nec ipsum at urna cursus facilisis. Proin in velit a dui luctus luctus sit amet eu ex. Nulla facilisi. In hac habitasse platea dictumst.</p>
+    </section>
+
+    <section id="problem3">
+        <h3>Problem 3: How to make a deposit?</h3>
+        <p>Suspendisse potenti. Ut ac bibendum metus. Sed sit amet ipsum eget sem consequat aliquam. Integer tempus, libero a venenatis tincidunt, enim sapien bibendum lacus.</p>
+    </section>
+
+    <section id="problem4">
+        <h3>Problem 4: How to withdraw funds?</h3>
+        <p>Cras nec velit a nisi cursus vestibulum. Mauris tincidunt nunc quis felis lacinia, nec fringilla purus feugiat. Nam nec dui sit amet quam sollicitudin elementum.</p>
+    </section>
+    <!-- Add more sections for additional problems please -->
+
+    <h2>Still need help?</h2>
     <button id="adminHelpButton">Request Help from Admin</button>
-    <button onclick="window.location.href = 'faq_page.html';">FAQ</button>
+
 
     <!-- Popup form for requesting help from admin -->
     <div id="popupForm" class="popup-form">
-        <h2>Request Help from Admin</h2>
+        <h>Request Help from Admin</h2>
         <form id="helpForm">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -35,45 +76,7 @@
             <button type="button" id="backButton">Back</button> <!-- Back button added -->
         </form>
     </div>
+    <br> <br> 
 
-    <script>
-        // Display the popup form when the "Request Help from Admin" button is clicked
-        document.getElementById('adminHelpButton').addEventListener('click', function() {
-            document.getElementById('popupForm').style.display = 'block';
-        });
-
-        // Close the popup form when the user clicks outside of it
-        window.onclick = function(event) {
-            var popupForm = document.getElementById('popupForm');
-            if (event.target == popupForm) {
-                popupForm.style.display = 'none';
-            }
-        };
-
-        // Function to handle form submission
-        document.getElementById('helpForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Fetch input values
-            var email = document.getElementById('email').value;
-            var query = document.getElementById('query').value;
-
-            // Will be using backend call for this
-            // just display an alert
-            alert('Query sent!\nEmail: ' + email + '\nQuery: ' + query);
-
-            // Reset the form and hide the popup
-            document.getElementById('helpForm').reset();
-            document.getElementById('popupForm').style.display = 'none';
-        });
-        // Function to handle back button click
-    document.getElementById('backButton').addEventListener('click', function() {
-        document.getElementById('popupForm').style.display = 'none'; // Hide the popup form
-    });
-        // Function to handle dashboard button click
-        document.getElementById('dashboardLink').addEventListener('click', function() {
-            window.history.back(); // Navigate back to the previous page
-        });
-    </script>
 </body>
 </html>

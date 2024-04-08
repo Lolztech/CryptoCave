@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Ask for confirmation
       var confirmation = confirm('Click Ok to continue as a ' + userType + ' user');
       if (confirmation) {
+          storeUserType(userType)
           if (userType === 'expert') {
                   // Redirect to dashboard for expert users
                   redirectToDashboard(userType);
@@ -61,5 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (userType === 'new') {
           window.location.href = 'new_dash.html';
       }      
+  }
+
+  function storeUserType(userType) {
+    localStorage.setItem('userType', userType);
   }
 });

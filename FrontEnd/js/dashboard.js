@@ -36,11 +36,17 @@ function updateUserDashboard() {
 function signoutButton() {
   // Add event listener to the "Sign Out" button
   document.getElementById('signOut').addEventListener('click', function() {
-    // Clear the username from localStorage
-    localStorage.removeItem('newUsername');
+    clearStorage()
     // Redirect to the signup page
     window.location.href = 'signupPage.html';
   });
+}
+
+//clear the user details from localStorage
+function clearStorage() {
+  localStorage.removeItem('newUsername');
+  localStorage.removeItem('userType');
+  localStorage.removeItem('companyName');
 }
 
 function helpButton() {
@@ -70,10 +76,10 @@ function walletsButton() {
 function tutorialButton() {
   if (document.getElementById('tutorialButton')) {
     // Add event listener to the "tutorial" button
-  document.getElementById('tutorialButton').addEventListener('click', function() {
-    // Redirect to the tutorial page
-    window.location.href = 'tutorials_page.html';
-  });
+    document.getElementById('tutorialButton').addEventListener('click', function() {
+      // Redirect to the tutorial page
+      window.location.href = 'tutorials_page.html';
+    });
   }
 }
 
