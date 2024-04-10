@@ -1,0 +1,10 @@
+# BitstampPublicApi.ErrorResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**reason** | **String** | Error reason. | [optional] [readonly] 
+**status** | **String** | \&quot;error\&quot; | [optional] [readonly] 
+
+

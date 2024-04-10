@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallets</title>
-    <link rel="stylesheet" href="css/allpages.css">
-    <link rel="stylesheet" href="css/wallets.css">
-    <script src="js/dashboardbar.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/wallets.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallets</title>
+  <link rel="stylesheet" href="css/allpages.css">
+  <link rel="stylesheet" href="css/wallets.css">
+  <script src="js/dashboardbar.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/wallets.js"></script>
 </head>
 <body> 
-    <!--creates link to dashboard as navigation bar-->
-    <a id="dashboardLink" href="#">
-        <div class="navbar">
-            Dashboard
-        </div>
-    </a>
-    
-    <!--sets all the buttons-->
-    <h2>Hello <span id="username"></span></h2>
-    <div id="username"> 
-        <h2><span id="username"></span></h2>
+  <a id="dashboardLink" href="#">
+    <div class="navbar">
+      Dashboard
     </div>
-    <button id="walletsButton">Wallets</button>
-    <button id="marketButton">Market</button>
-    <button id="helpButton">Request Help</button>
-    <button id="signOut">Sign Out</button>
-    <button id="backButton">Return</button>
-
-    <h1>Wallet</h1>
-    <div id="createWalletForm">
-        <h2>Create a New Wallet</h2>
-        <form id="walletForm">
-          <label for="walletName">Wallet Name:</label>
-          <input type="text" id="walletName" name="walletName" required>
-          <br /><br />
-          <label for="bankAccount">Choose Bank Account:</label>
-          <select id="bankAccount" name="bankAccount" required>
-            <!-- Add more options as needed --></select
-          ><br /><br />
-          <button type="submit">Create Wallet</button>
-        </form>
-      </div>
+  </a>
   
-      <div id="existingWallets">
-        <h2>Existing Wallets</h2>
-        <ul id="walletList"></ul>
-      </div>
+  <h2>Hello <span id="username"></span></h2>
+  
+  <button id="walletsButton">Wallets</button>
+  <button id="marketButton">Market</button>
+  <button id="helpButton">Request Help</button>
+  <button id="signOut">Sign Out</button>
+  <button id="backButton">Return</button>
+
+  <h1>Wallet</h1>
+  
+  <div id="createWalletForm">
+    <h2>Create a New Wallet</h2>
+    <form id="walletForm">
+      <label for="walletName">Wallet Name:</label>
+      <input type="text" id="walletName" name="walletName" required>
+      <br /><br />
+      <button type="submit">Create Wallet</button>
+    </form>
+  </div>
+
+  <div id="existingWallets">
+    <h2>Existing Wallets</h2>
+    <ul id="walletList"></ul>
+  </div>
+
 </body>
 </html>
