@@ -1,0 +1,129 @@
+body{
+    font-family: Verdana, Geneva, serif;
+    margin:2%;
+}
+
+.gridcontainer{
+    display:grid;
+    grid-template-rows:1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container1 {
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between items */
+    border:2px solid purple;
+    background-color: blueviolet;
+    opacity:30%;
+    background-repeat:repeat-x;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    margin-right: 20px;
+    width: 40%;
+    height: 105%;
+}
+
+.container1 nav ul{
+    list-style: none;
+}
+
+.container1 nav ul li{
+    margin-bottom:20px;
+    justify-content: center;
+    align-items:center;
+    text-align: left;
+}
+
+.container1 nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    padding: 5px 10px; /* Add padding to the links */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #3498db; /* Set background color */
+    color: #fff; /* Set text color */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+a{
+    color: black;
+}
+
+.container2{
+    width:150%;
+    margin-left: -55%;
+}
+
+.container3 { 
+    border-style: solid;
+    border-radius: 5px;
+    text-align:center;
+    height: 20%;
+}
+
+.container h1{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container4{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.container4 h1{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.container5{
+    border-style: solid;
+    border-radius: 5px;
+    text-align:center;
+    margin-bottom: 10px;
+    margin: 2%;
+    margin-bottom:20%;
+    height: 80%;
+    grid-column:span 2;
+}
+
+.container6{
+    border-style: solid;
+    border-radius: 5px;
+    text-align:center;
+    margin: 2%;
+    margin-bottom:20%;
+    height:80%;
+}
+
+.container7{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 1fr ;
+}
+
+.container8 {
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center; /* Center align the content within the container */
+    margin: 2%;
+    position: relative; /* Establish positioning context for absolute positioning */
+    height:60%;
+    font-size: 10px;
+}
+
+.container8 img {
+    width: 50px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Position the image absolutely within the container */
+    left: 0; /* Align the image to the left side of the container */
+    top: 20%; /* Vertically center the image */
+}
+
+.container8 p {
+    vertical-align: left; /* Align the paragraph content to the left */
+    padding: 50px;
+}
+

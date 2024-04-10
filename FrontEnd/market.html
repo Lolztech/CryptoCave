@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/market.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Crypto market</title>
+</head>
+<body>
+    <div class = "gridcontainer">
+        <div class="container1">
+            <nav>
+                <ul>
+                    <li><a href="#">account</a></li>
+                    <li><a href="market.html">market</a></li>
+                    <li><a href="help_page.html">about us</a></li>
+                    <li><a href="wallets.html">wallet</a></li>
+                    <li><a href="tutorial_page.html">tutorial page</a></li>
+                    <li><a href="signupPage.html">Create an account</a></li>
+                    <li><a href="">log out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class = "container2">
+            <div class ="container3">
+                <h1>wallet</h1>
+            </div>
+            <div class ="container4">
+                <div class = "container5">
+                    <h1>graph</h1>
+                </div>
+
+                <div class = "container6">
+                    <h1>currency converter</h1>
+                    <input type = "text" name = "amount" id ="amount" placeholder="Enter your amount">
+                    <select type = "text" id = "cryptocurrency" placeholder = "cryptocurrency">
+                        <option value = "DOGE">Dogecoin (DOGE)</option>
+                        <option value = "BTC">BITCOIN (BTC)</option>
+                        <option value = "ETH">Ethereum (ETH)</option>
+                        <option value = "SHIB">Shiba Inu (SHIB)</option>
+                        <option value = "TETH">Tether (TETH)</option>
+                        <option value = "SOL">Solana (SOL)</option>
+                        <option value = "XRP">XRP (XRP)</option>
+                    </select>
+                    <select type = "text" id = "currency" placeholder = "currency">
+                        <option value = "MYR">Ringgit malaysia (MYR)</option>
+                        <option value = "USD">United States Dollar (USD)</option>
+                        <option value = "GBP">Pound Sterling (GBP)</option>
+                        <option value = "Eur">Euro Dollar (EUR)</option>
+                        <option value = "CHF">Swiss Franc (CHF)</option>
+                        <option value = "AUD">Australian Dollar (AUD)</option>
+                        <option value = "BND">Brunei Dollar (BND)</option>
+                    </select>
+                    <button type = "button">
+                        convert
+                    </button>
+
+                    <p id = "result"></p>
+                </div>
+
+                <div class = "container7">
+                    <div class = "container8">
+                        <img src = "./photo/tether-logo.png">
+                        <h1>Tether</h1>
+                        <h1>$<span id = "Tether"></span></h1>
+                    </div>
+                    <div class = "container8">
+                        <img src = "./photo/dogecoin-doge-logo.png">
+                        <h1>Dogecoin</h1>
+                        <h1>$<span id = "Dogecoin"></span></h1>
+                    </div>
+                    <div class = "container8">
+                        <img src = "./photo/ethereum-eth-logo.png">
+                        <h1>Ethereum</h1>
+                        <h1>$<span id = "Ethereum"></span></h1>
+                    </div>
+                    <div class = "container8">
+                        <img src = "./photo/bitcoin-btc-logo.png">
+                        <h1>Bitcoin</h1>
+                        <h1>$<span id = "Bitcoin"></span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src = "./js/market.js"></script>
+</body>
+</html>
