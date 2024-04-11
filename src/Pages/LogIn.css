@@ -1,0 +1,44 @@
+.login-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .return-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px; /* Adjust based on your preference */
+    margin: auto; /* Ensures proper centering in flex container */
+  }
+  
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .submit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  

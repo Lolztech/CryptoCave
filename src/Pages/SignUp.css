@@ -1,0 +1,59 @@
+.signup-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .forms-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Creates 50px space between the two forms */
+  }
+  
+  .form-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px; /* Adjust based on your preference */
+  }
+  
+  .form-box h2 {
+    margin-bottom: 20px;
+  }
+  
+  form input {
+    display: block;
+    width: calc(100% - 20px); /* Adjust input width to fit the form */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .return-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .submit-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Adds some space above the button */
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049; /* Darker shade of green for hover effect */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
