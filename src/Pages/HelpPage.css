@@ -1,0 +1,41 @@
+/* Following the App.css theme for the Help Page */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #282c34;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #61dafb;
+  }
+  
+  .button {
+    background-color: #61dafb; /* App-link color for button backgrounds */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .popup-form {
+    background-color: #282c34;
+    border: 2px solid #61dafb; /* Using App-link color for form borders */
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%; /* Adjust based on your layout preferences */
+  }
+  
+  input, textarea {
+    margin: 10px 0;
+    padding: 8px;
+    width: calc(100% - 20px); /* Full width minus padding */
+  }
+  
+  /* Adapt the @keyframes and any additional styling from App.css as needed */
+  

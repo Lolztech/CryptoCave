@@ -25,44 +25,31 @@ function LogIn() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    // Clear error message when user starts typing
     setError('');
   };
 
   // Handle form submission
-// Inside LogIn component
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validateEmail(formValues.email)) {
-    setError('Please enter a valid email address.');
-    return;
-  }
-  if (!formValues.email || !formValues.username || !formValues.password) {
-    setError('Please fill in all fields.');
-    return;
-  }
-
-  try {
-    const response = await fetch('http://localhost:5000/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formValues),
-    });
-    
-    const data = await response.json(); // Parse the response only once
-    if (!response.ok) {
-      throw new Error(data.message || 'An error occurred during login.');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateEmail(formValues.email)) {
+      setError('Please enter a valid email address.');
+      return;
     }
-    
-    console.log('Login successful:', data);
-    navigate('/dashboard', { state: { userName: data.name, accountId: data._id } }); // Pass user data to dashboard
-  } catch (error) {
-    console.error('Login error:', error);
-    setError(error.message || 'Failed to log in.');
-  }
-};
+    if (!formValues.email || !formValues.username || !formValues.password) {
+      setError('Please fill in all fields.');
+      return;
+    }
 
+    // Simulated fetch request for login
+    console.log('Login attempt:', formValues);
+    // Here you would typically handle the actual login logic
+    navigate('/dashboard'); // Navigate to dashboard upon successful login simulation
+  };
+
+  // Function to redirect to Microsoft Authenticator
+  const redirectToMicrosoftAuthenticator = () => {
+    window.location.href = 'https://www.microsoft.com/en-us/account/authenticator';
+  };
 
   return (
     <div className="login-container">
@@ -92,12 +79,14 @@ const handleSubmit = async (e) => {
             value={formValues.password}
             onChange={handleInputChange}
           />
-          {error && <p className="error-message">{error}</p>} {/* Display error message if any */}
+          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="submit-button">Log In</button>
         </form>
+        <button className="submit-button" onClick={redirectToMicrosoftAuthenticator}>2 Factor Authentication</button>
       </div>
     </div>
   );
 }
 
 export default LogIn;
+

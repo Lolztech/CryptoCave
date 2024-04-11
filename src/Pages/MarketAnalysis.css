@@ -1,0 +1,57 @@
+.container {
+    text-align: center;
+    background-color: #1e1e1e; 
+    color: #ffffff; 
+    padding: 20px;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    color: #4caf50; 
+    margin-bottom: 20px;
+  }
+  
+  /* Style adjustments for the canvas where the chart will render */
+  #chart {
+    -webkit-box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    max-width: 900px; 
+    width: 100%;
+  }
+  
+  #analysisResult {
+    margin-top: 20px;
+    color: #61dafb; 
+  }
+  
+  /* Styling buttons if they are used on the page, for consistency */
+  button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049; 
+  }
+  
+  /*Responsive adjustments */
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+    #chart {
+      max-width: 100%;
+    }
+  }
+  
